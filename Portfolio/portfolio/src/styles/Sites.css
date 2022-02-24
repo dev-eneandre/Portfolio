@@ -1,0 +1,51 @@
+.sites__container{
+    display : flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.sites{
+    width: 30%;
+    height: 35vh;
+    margin: 2rem 1rem;
+    border: 2px solid #838080;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    box-shadow : 0 4px 10px 0 rgba(102, 102, 102, 0.2) , 0 6px 20px 0 rgba(102, 102, 102, 0.2) ;
+}
+.sites__preview{
+    width : 100%;
+    object-fit: contain;
+    transition: all;
+    animation: scrollImage 4s ease alternate infinite;
+    animation-play-state: paused;
+}
+.sites__preview:hover{
+    animation-play-state: running;
+}
+@keyframes scrollImage {
+    25% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(-25%);
+    }
+    75% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(-75%);
+    }
+}
+
+
+@media screen and (max-width : 1000px){
+    .sites{
+        height : 25vh;
+    }
+}
+@media screen and (max-width : 768px){
+    .sites{
+        width : 100%;
+        height: 35vh;
+    }
+}

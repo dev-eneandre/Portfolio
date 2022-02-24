@@ -1,0 +1,85 @@
+*{
+    margin : 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10vh;
+    padding: 0px 50px;
+    background-color: rgba(0,0,0,0.15);
+    color: rgb(245, 238, 238);
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+    font-family: 'Josefin Sans', sans-serif;
+}
+.logo a{
+    color: rgb(245, 238, 238);
+    text-decoration: none;
+    font-weight: bold;
+    font-size : 17px;
+}
+.pages{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.pages a {
+    text-decoration: none;
+    color: rgb(245, 238, 238);
+    font-weight: 700;
+}
+.burger{
+    display: none; cursor: pointer;
+}
+.burger div{
+    width: 28px;
+    height : 3px;
+    background-color: rgb(245, 238, 238);
+    margin: 5px;
+}
+
+@media screen and (max-width : 1000px) {  
+    body{
+        overflow-x: hidden;
+        /* background-color: rgba(46, 44, 44, 0.308); */
+       
+    }
+    .burger{
+        display: block;
+    }
+    .pages{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 10vh;
+        width: 50%;
+        transform : translateX(100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transition: transform 0.5s ease-in;
+        z-index: 1;   
+        background-color: rgba(29, 27, 27, 0.548);
+        color: rgb(245, 238, 238);
+        z-index: 1;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+        font-weight: bold;
+    }
+    .nav-links{
+        opacity: 0;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
